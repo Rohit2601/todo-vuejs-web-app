@@ -1,0 +1,97 @@
+.app-body {
+  background-image: url("https://img.freepik.com/free-photo/blue-smooth-wall-textured-background_53876-106133.jpg?size=626&ext=jpg&ga=GA1.1.1377302403.1689762374&semt=ais");
+  height: 100vh;
+  font-family: "Red Hat Display",
+    RedHatDisplay,
+    Overpass,
+    Overpass,
+    Arial,
+    sans-serif;
+}
+
+.heading {
+  background-color: burlywood;
+  text-align: center;
+  width: 40%;
+  margin: 30px auto;
+  border-radius: 20px;
+}
+
+.signin {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 10px;
+  padding-top: 10px;
+}
+
+.signup-button {
+  margin-right: 10px;
+}
+
+.pfe-card {
+  width: 40%;
+  margin: 60px auto;
+  height: 60vh;
+  border-radius: 50px;
+}
+
+.form_card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 50px;
+}
+
+.userinput {
+  width: 80%;
+  height: 25px;
+  margin-right: 10px;
+  font-size: medium;
+}
+
+.addbutton {
+  width: 80%;
+  height: 25px;
+  cursor: pointer;
+}
+
+.card-tabs {
+  margin-top: 40px;
+}
+
+.tab-panel-body {
+  height: 400px;
+  overflow-y: scroll;
+}
+
+.tab-panel-body li {
+  padding: 12px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.main-list-body {
+
+  text-align: center;
+
+}
+
+
+.todo-data {
+  display: flex;
+  justify-content: space-between;
+}
+
+.todo-data>h3 {
+  width: 50%;
+  text-overflow: scroll;
+}
+
+.todo-data>h4 {
+  width: 20%;
+}
+
+.checkbox-input {
+  cursor: pointer;
+}
