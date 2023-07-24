@@ -44,14 +44,14 @@
   line-height: 50px;
 }
 
-.userinput {
+.user-input {
   width: 80%;
   height: 25px;
   margin-right: 10px;
   font-size: medium;
 }
 
-.addbutton {
+.add-button {
   width: 80%;
   height: 25px;
   cursor: pointer;
@@ -68,7 +68,12 @@
 
 .tab-panel-body li {
   padding: 12px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Red Hat Display",
+    RedHatDisplay,
+    Overpass,
+    Overpass,
+    Arial,
+    sans-serif;
 }
 
 .main-list-body {
@@ -86,6 +91,7 @@
 .todo-data>h3 {
   width: 50%;
   text-overflow: scroll;
+  
 }
 
 .todo-data>h4 {

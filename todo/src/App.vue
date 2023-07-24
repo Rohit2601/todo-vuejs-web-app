@@ -4,17 +4,16 @@ import "@patternfly/pfe-cta";
 import "@patternfly/pfe-button";
 import "@patternfly/pfe-tabs";
 import { ref } from "vue";
-// import ActiveTask from "./components/ActiveTask.vue";
-// import ClosedTask from "./components/ActiveTask.vue";
+import ActiveTask from "./components/ActiveTask.vue";
+import ClosedTask from "./components/ClosedTask.vue";
 
 export default {
-  // components: {
-  //   ActiveTask,
-  //   ClosedTask,
-  // },
+  components: {
+    ActiveTask,
+    ClosedTask,
+  },
   setup() {
     const newTodo = ref("");
-    const checkBox = ref(false);
     const todos = ref([]);
     const completedTodo = ref([]);
     const allToDo = ref([]);
@@ -37,7 +36,7 @@ export default {
     }
 
     function checkToDO(index, event) {
-    
+      console.log(event);
       completedTodo.value.push(todos.value[index]);
       todos.value.splice(index, 1);
     }
@@ -49,7 +48,6 @@ export default {
       removeTodo,
       checkToDO,
       completedTodo,
-      checkBox,
     };
   },
 };
@@ -70,13 +68,13 @@ export default {
     <pfe-card class="pfe-card">
       <div class="form_card">
         <input
-          class="userinput"
+          class="user-input"
           type="text"
           placeholder="Enter your task"
           v-model="newTodo"
         />
         <pfe-button>
-          <button class="addbutton" @click="addnewTodo">Add</button>
+          <button class="add-button" @click="addnewTodo">Add</button>
         </pfe-button>
       </div>
       <div class="card-tabs">
@@ -84,42 +82,11 @@ export default {
           <pfe-tab role="heading" slot="tab">
             <h1>Active Tasks</h1>
           </pfe-tab>
-          <pfe-tab-panel role="region" slot="panel" class="tab-panel-body">
-            <div class="main-list-body">
-              <li
-                v-for="(todo, index) in todos"
-                :key="todo.id"
-                class="task-list"
-                style="list-style: none"
-              >
-                <div class="todo-data">
-                  <input
-                    type="checkbox"
-                    v-model="checkBox"
-                    @click="checkToDO(index, event)"
-                    class="checkbox-input"
-                    :id="'checkbox' + index"
-                  />
-                  <h3>{{ todo.content }}</h3>
-                  <h4>{{ todo.id }}</h4>
-                </div>
-              </li>
-            </div>
-          </pfe-tab-panel>
+          <ActiveTask :todos="todos" :checkToDO="checkToDO"></ActiveTask>
           <pfe-tab role="heading" slot="tab">
             <h1>Closed Tasks</h1>
           </pfe-tab>
-          <pfe-tab-panel role="region" slot="panel" class="tab-panel-body">
-            <ol type="1">
-              <li
-                v-for="(todo, index) in completedTodo"
-                :key="todo.id"
-                class="task-list"
-              >
-                <h3>{{ todo.content }}</h3>
-              </li>
-            </ol>
-          </pfe-tab-panel>
+          <ClosedTask :completedTodo="completedTodo"></ClosedTask>
         </pfe-tabs>
       </div>
     </pfe-card>
